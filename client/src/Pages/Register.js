@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../CSS/Register.css'; // Adjust the path if needed
 
 const Register = () => {
@@ -26,7 +27,9 @@ const Register = () => {
       <input name="username" placeholder="Username" value={form.username} onChange={handleChange} />
       <input name="email" placeholder="Email" type="email" value={form.email} onChange={handleChange} />
       <input name="password" placeholder="Password" type="password" value={form.password} onChange={handleChange} />
-      <button type="submit">Register</button>
+      <Link to="/login">
+        <button type="submit">Register</button>
+      </Link>
       {message && <p className="message">{message}</p>}
     </form>
   );

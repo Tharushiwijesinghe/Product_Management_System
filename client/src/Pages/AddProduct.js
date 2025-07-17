@@ -37,7 +37,7 @@ const AddProduct = () => {
 
     const handleDelete = async (id) => {
     try {
-      await axios.delete('http://localhost:5000/api/products/deleteProduct/${id}');
+      await axios.delete(`http://localhost:5000/api/products/deleteProduct/${id}`);
       fetchProducts();
     } catch (err) {
       console.error('Error deleting product:', err);
