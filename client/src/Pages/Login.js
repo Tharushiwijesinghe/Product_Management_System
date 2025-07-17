@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './Login.css';
+import { Link } from 'react-router-dom';
+import '../CSS/Login.css';
 
 
 const Login = () => {
@@ -26,7 +27,7 @@ const Login = () => {
       <h2>Login</h2>
       <input name="email" placeholder="Email" type="email" value={form.email} onChange={handleChange} />
       <input name="password" placeholder="Password" type="password" value={form.password} onChange={handleChange} />
-      <button type="submit">Login</button>
+      <Link to="/add-product"><button type="submit">Login</button></Link>
       {message && <p className="message">{message}</p>}
     </form>
   );
