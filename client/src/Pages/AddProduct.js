@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../CSS/AddProduct.css'; // Adjust the path if needed
+import { useNavigate } from 'react-router-dom';
 
 
 const AddProduct = () => {
   const [product, setProduct] = useState({ id: '', name: '', price: '' });
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setProduct({ ...product, [e.target.name]: e.target.value });
@@ -45,7 +47,10 @@ const AddProduct = () => {
   };
 
   useEffect(() => {
-    fetchProducts();
+    const token = localStorage.getItem('token');
+    if (!token) {
+      navigate('/login');
+    }
   }, []);
 
   return (
