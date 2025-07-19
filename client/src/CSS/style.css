@@ -40,3 +40,17 @@ button:hover {
 h2 {
   text-align: center;
 }
+
+.message {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+  background-color: #444;
+  text-align: center;
+}
+
+.message::before {
+  content: "ℹ️ ";
+}
